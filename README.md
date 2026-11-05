@@ -50,18 +50,13 @@ src
 └── index.ts
 ```
 
-## Project Context
-
-Strivlo Studio was developed as part of a portfolio project exploring AI-assisted development tools and modern full-stack application architecture.
-
-The project demonstrates the integration of modern web technologies with AI-driven workflows to simulate an intelligent development environment.
-
-
 ## Running Locally
 
 Clone the repository:
 
+```
 git clone https://github.com/Strivlo/secure-rest-api-system
+```
 
 Install dependencies:
 
@@ -72,22 +67,26 @@ npm install
 Start the development server
 
 ```
-npm run dev
+npm start
 ```
 
 The application will run at
 
 ```
-[http://localhost:3000](http://localhost:8000/)
+http://localhost:8000
 ```
 
 ## API Testing
 
 Endpoints can be tested using Postman or any REST client.
 
-Example request:
-
-GET http://localhost:3000/users
+| Method | Route | Auth |
+| --- | --- | --- |
+| POST | `/auth/register` | None |
+| POST | `/auth/login` | None (sets the session cookie) |
+| GET | `/users` | Logged in |
+| PATCH | `/users/:id` | Logged in, own account only |
+| DELETE | `/users/:id` | Logged in, own account only |
 
 
 ## Author
